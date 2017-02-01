@@ -17,6 +17,7 @@ import { FormComponent } from './form/form.component';
  *Service
  */
 import { DataService } from './services/data.service';
+import { ResultComponent } from './result/result.component';
 
 
 /*
@@ -33,6 +34,7 @@ const routing = RouterModule.forRoot([
     HomeComponent,
     ToastComponent,
     FormComponent,
+    ResultComponent,
   ],
   imports: [
     BrowserModule,

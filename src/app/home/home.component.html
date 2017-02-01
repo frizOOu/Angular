@@ -4,7 +4,7 @@
     <div class="card-block">
       <div class="form-group">
       
-      <form class="form-inline" #form="ngForm" (ngSubmit)="createForm()" style="display:inline">
+      <form class="form-inline" #form="ngForm" (ngSubmit)="OnSubmit()" style="display:inline">
           <table class="table table-bordered table-striped">
             <tr>
               <td>
@@ -18,7 +18,6 @@
            <table class="table table-bordered table-striped">
             <tr>
               <td>
-
                 <select class="form-control" (ngModelChange)="capt($event)" [(ngModel)]="params.two" [ngModelOptions]="{standalone: true}">
                   <option *ngFor="let param of params" [ngValue]="param">{{param}}</option>
                 </select>
@@ -28,7 +27,6 @@
            <table class="table table-bordered table-striped">
             <tr>
               <td>
-
                 <select class="form-control" (ngModelChange)="capt($event)" [(ngModel)]="params.three" [ngModelOptions]="{standalone: true}">
                   <option *ngFor="let param of params" [ngValue]="param">{{param}}</option>
                 </select>

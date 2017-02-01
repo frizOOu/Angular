@@ -11,11 +11,13 @@ export class DataService {
 
   constructor(private http: Http) { }
 
-  getTypeOfParam(): Observable<any>{
-    return this.http.get('api/get-type').map(res => res.json());
+  getSchema(): Observable<any>{
+    return this.http.get('api/get-schema').map(res => res.json());
   }
-  // fetch(data): Observable<any>
-  // {
-  //   return this.http.post('api/find', JSON.stringify(data));
-  // }
+  getIfString(string): Observable<any>{
+    return this.http.post('api/get-string', JSON.stringify(string), this.options)
+  }
+  getIfDate(date): Observable<any>{
+    return this.http.post('api/get-date', JSON.stringify(date), this.options)
+  }
 }
