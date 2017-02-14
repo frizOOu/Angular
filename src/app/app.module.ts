@@ -6,35 +6,39 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Router, RouterModule } from '@angular/router';
+import { jqxGridComponent } from 'jqwidgets-framework/jqwidgets-ts/angular_jqxgrid';
 /*
  *COMPONENTS
  */
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { Page1Component } from './page1/page1.component';
+import { Page2Component } from './page2/page2.component';
+import { Page3Component } from './page3/page3.component';
 import { ToastComponent } from './shared/toast/toast.component';
-import { FormComponent } from './form/form.component';
+// import { ResultComponent } from './result/result.component';
+import { GridComponent } from './grid/grid.component';
 /*
  *Service
  */
 import { DataService } from './services/data.service';
-import { ResultComponent } from './result/result.component';
-
-
 /*
  *ROUTES
  */
 const routing = RouterModule.forRoot([
-    { path: '', component: HomeComponent },
-    { path:'form', component : FormComponent }
+    { path: '', component: Page1Component },
+    { path:'page2', component : Page2Component },
+    { path:'page3', component : Page3Component},
+    { path:'grid', component : GridComponent}
 ]);
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    ToastComponent,
-    FormComponent,
-    ResultComponent,
+    Page1Component,
+    Page2Component,
+    Page3Component,
+    // ResultComponent,
+    GridComponent,
   ],
   imports: [
     BrowserModule,

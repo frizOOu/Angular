@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Injectable()
+
 export class DataService {
 
   private headers = new Headers({ 'Content-Type': 'application/json', 'charset': 'UTF-8' });
@@ -14,10 +15,7 @@ export class DataService {
   getSchema(): Observable<any>{
     return this.http.get('api/get-schema').map(res => res.json());
   }
-  getIfString(string): Observable<any>{
-    return this.http.post('api/get-string', JSON.stringify(string), this.options)
-  }
-  getIfDate(date): Observable<any>{
-    return this.http.post('api/get-date', JSON.stringify(date), this.options)
+  postData(objForm): Observable<any>{
+    return this.http.post('api/request', JSON.stringify(objForm), this.options);
   }
 }
